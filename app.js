@@ -3,7 +3,7 @@ import {getAuth,signInWithEmailAndPassword,onAuthStateChanged,signOut} from 'htt
 import {getFirestore,doc,collection,onSnapshot,getDoc,runTransaction,writeBatch,deleteDoc,setDoc,updateDoc,serverTimestamp} from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js';
 import {firebaseConfig} from './firebase-config.js';
 const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app);
-const $=id=>document.getElementById(id),escapeHTML=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&','<':'<','>':'>','"':'"',"'":'''}[c]));
+const $=id=>document.getElementById(id),escapeHTML=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let role='',items=[],categories=[],subcategories=[],unsubs=[],user=null;
 const ADMIN_UID='Z8FU1lDhcofikumcy61ans6M6HI2';const canAdmin=()=>role==='admin';const id=()=>crypto.randomUUID();const materialRef=k=>doc(db,'materials',k);
 const safeInt=v=>Math.max(0,Math.floor(Number(v)||0));const low=x=>safeInt(x.qty)<safeInt(x.min);
