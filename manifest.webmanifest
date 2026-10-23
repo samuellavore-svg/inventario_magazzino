@@ -1,1 +1,10 @@
-{"name":"Inventario Magazzino","short_name":"Inventario","start_url":"/","display":"standalone","background_color":"#0b1424","theme_color":"#101e31"}
+
+{
+  "name": "Inventario Magazzino Padre Pio",
+  "short_name": "Inventario",
+  "start_url": "/inventario_magazzino/",
+  "scope": "/inventario_magazzino/",
+  "display": "standalone",
+  "background_color": "#0b1424",
+  "theme_color": "#101e31"
+}
